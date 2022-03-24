@@ -1,0 +1,16 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "frontend",
+            "image": "kuhoo2000/frontend",
+            "hostname": "frontend",
+            "essential": false,
+            "memory": 128
+        },
+        {
+            "links": ["frontend"],
+            "memory": 128
+        }
+    ]
+}
