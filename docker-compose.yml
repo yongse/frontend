@@ -3,7 +3,7 @@ services:
     react:
         build:
             context: .
-            dockerfile: Dockerfile
+            dockerfile: Dockerfile.dev
         ports:
             - "3000:3000"
         volumes:
