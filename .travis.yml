@@ -7,7 +7,7 @@ services:
 
 before_install:
     - echo "start Creating an image with dockerfile"
-    - docker build -t kuhoo2000/frontend -f Dockerfile .
+    - docker build -t kuhoo2000/frontend -f Dockerfile.dev .
 
 script:
     - docker run -e CI=true kuhoo2000/frontend npm run test -- --coverage
