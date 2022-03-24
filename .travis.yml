@@ -12,5 +12,14 @@ before_install:
 script:
     - docker run -e CI=true kuhoo2000/frontend npm run test -- --coverage
 
-after_success:
-    - echo "Test Success"
+deploy:
+    provider: elasticbeanstalk
+    region: "ap-northeast-2"
+    app: "frontend"
+    env: "frontend-env"
+    bucket_name: "elasticbeanstalk-ap-northeast-2-592357601050"
+    bucket_path: "frontend"
+    on:
+        branch: master
+access_key_id: $AWS_ACCESS_KEY
+secret_access_key: $AWS_SECRET_KEY
